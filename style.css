@@ -1,0 +1,6 @@
+body{margin:0px; background-color:#aaaaaa; font-family:Verdana;}
+h3{background-color:#999999; color:#ffffff; padding:10px;}
+#main{max-width:1000px; margin:0px auto; padding:20px; background-color:#ffffff;}
+.menu{background-color:#999999; color:#ffffff; padding:10px; display:block; text-decoration:none;}
+.portaimg{text-align:center; margin-bottom:20px;}
+.portaimg img{max-width:74%;}

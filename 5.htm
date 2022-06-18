@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width'>
+<title>Programando um jogo no celular</title>
+<link href=style.css rel=stylesheet>
+<body>
+<div id=main>
+<h3>AndroidManifest.xml</h3>
+O arquivo AndroidManifest.xml é um arquivo de configuração.<br>
+Ele é importante e é obrigatório em todo app android.<br><br>
+
+Nesse tutorial editaremos pouco esse arquivo.<br><br>
+
+Por enquanto vamos colocar o atributo<br>
+android:screenOrientation="landscape"<br>
+no elemento<br>
+<activity<br>
+para que o jogo seja exibido modo paisagem.<br><br>
+
+Se você salvar e apertar o play/executar você verá que o app ficou modo paisagem.<br><br>
+
+Não é obrigatorio, mas eu quero excluir a pasta 'values' (ela fica dentro da pasta 'res').<br><br>
+
+Antes de excluir o arquivo styles.xml eu devo excluir o atributo<br>
+android:theme="@style/AppTheme"<br>
+do<br>
+<application<br>
+no arquivo AndroidManifest.xml<br>
+(Repare que o character > no fim da linha deve permanecer. Não remova a linha toda.)<br><br>
+
+Antes de excluir o arquivo strings.xml é preciso substituir<br>
+"@string/app_name"<br>
+por<br>
+"joguinho"<br>
+no label da application no manifest.<br><br>
+
+<div class=portaimg><img src=imagens/Screenshot_20220429-210806.png></div>
+
+Você pode salvar e dar o play.<br>
+Por enquanto ainda não parece um jogo, mas vai parecer.<br><br>
+
+Se a gente criar o atributo<br>
+android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"<br>
+na<br>
+<application<br>
+no manifest<br><br>
+
+e salvar e executar<br><br>
+
+o app fica em tela cheia (fullscreen).<br>
+E sem aquela barrinha escrito 'joguinho' no topo (sem title bar).<br><br>
+
+<div class=portaimg><img src=imagens/Screenshot_20220429-160920.png></div>
+
+<div id=menu></div>
+</div>
+<script src=menu.js></script>
+</body>
+</html>

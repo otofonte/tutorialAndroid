@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width'>
+<title>Programando um jogo no celular</title>
+<link href=style.css rel=stylesheet>
+<body>
+<div id=main>
+<h3>gameLoop</h3>
+Jogos geralmente tem um gameloop.<br><br>
+
+Uma função/método que é executada varias vezes por segundo.<br>
+Calculando a posição dos elementos na tela.<br><br>
+
+Existem várias maneiras de programar isso em varias linguagens e engines.<br><br>
+
+Aqui nesse tutorial a gente vai usar a classe Timer e TimerTask<br><br>
+
+Vamos manter a classe main gerenciando os elementos do jogo e a viewJoguinho lidando com a interação com o user.<br><br>
+
+A gente vai precisar importar Timer, TimerTask e Handler<br>
+import android.os.Handler;<br>
+import java.util.Timer;<br>
+import java.util.TimerTask;<br><br>
+
+A gente cria uma variável timer na main<br>
+E um handler<br>
+E um runnable que chama a onDraw<br>
+	final Handler handler=new Handler();<br>
+	Timer timer=new Timer();<br>
+	final Runnable runnable=new Runnable(){public void run(){vj.invalidate();}};<br><br>
+
+Dentro da onCreate a gente coloca um timer para executar nosso gameloop de 40 em 40 milissegundos<br>
+		timer.schedule(new TimerTask(){public void run(){<br>
+			handler.post(runnable);<br>
+		}},0,40);<br><br>
+
+Para visualizar a tela renderizada pela gameloop vamos botar um obstáculo para se mover da direira para esquerda<br>
+A variável obs é um atributo int da classe main.<br><br>
+
+Vamos colocar dentro da schedule (gameLoop) esse código que atualiza a posição do obstáculo:<br>
+			obs=obs-10;<br>
+			if(obs<-50)obs=(int)maxx+200;<br><br>
+
+schedule significa agendamento.<br>
+Por que daqui 40 milissegundos será a vez desse código ser executado.<br>
+Fica agendado.<br><br>
+
+Na onDraw a gente imprime o obstáculo na posição atualizada<br>
+c.drawRect(obs,(int)(medida*15),obs+medida,(int)(medida*16),p);<br><br>
+<div class=portaimg><img src=imagens/Screenshot_20220501-165647.png></div>
+<div class=portaimg><img src=imagens/Screenshot_20220501-165659.png></div>
+<div id=menu></div>
+</div>
+<script src=menu.js></script>
+</body>
+</html>

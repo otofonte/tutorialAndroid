@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width'>
+<title>Programando um jogo no celular</title>
+<link href=style.css rel=stylesheet>
+<body>
+<div id=main>
+<h3>Renderizando o Cenário</h3>
+Vamos desenhar o chão.<br><br>
+
+Se a gente desenhar um retangulo marrom na posicao certa<br>
+a gente fica com o céu azul e o chão marrom.<br><br>
+
+<div class=portaimg><img src=imagens/Screenshot_20220501-111057.png></div>
+
+Esse é nosso cenario.<br><br>
+
+A função drawRect deve servir.<br><br>
+
+Uma questão que devemos levar em conta é que existem muitas combinações de modelo de celular/definição/zoom.<br><br>
+
+Eu quero dizer que se a gente desenha o retangulo marrom<br>
+da altura 200px (por exemplo)<br>
+até o fim da tela...<br><br>
+
+Esse retangulo pode estar posicionado corretamente para representar o chão em alguns celulares<br>
+e em outros não.<br><br>
+
+Em alguns celulares 200px é o meio da tela.<br>
+Em alguns celulares 200px é a altura da tela...<br><br>
+
+Para resolver esse problema vamos criar uma variável 'medida'.<br><br>
+
+Ela vai armazenar a altura da tela dividido por 25<br>
+E tudo que for desenhado na tela terá medidas baseadas nessa variável.<br><br>
+
+O valor dessa variável pode mudar de um celular para outro, mas sempre equivale a 1/25 da altura da tela.<br><br>
+
+Para obter o tamanho da tela a gente usa esse código na função onCreate da classe MainActivity<br>
+		Point size=new Point();<br>
+		getWindowManager().getDefaultDisplay().getSize(size);<br>
+		maxx=Math.max(size.x,size.y);<br>
+		maxy=Math.min(size.x,size.y);<br>
+		medida=maxy/25;<br><br>
+
+A variável size é local do método onCreate.<br>
+maxx, maxy  e medida são float da MainActivity<br><br>
+
+É preciso importar Point<br>
+import android.graphics.Point;<br><br>
+
+Na função onDraw da classe ViewJoguinho a gente define a cor marrom e desenha um retangulo<br>
+				p.setColor(Color.rgb(230,210,200));<br>
+				c.drawRect(0,(float)(medida*17),maxx,maxy,p);<br><br>
+<div class=portaimg><img src=imagens/Screenshot_20220501-111120.png></div>
+<div id=menu></div>
+</div>
+<script src=menu.js></script>
+</body>
+</html>

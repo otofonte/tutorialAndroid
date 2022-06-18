@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width'>
+<title>Programando um jogo no celular</title>
+<link href=style.css rel=stylesheet>
+<body>
+<div id=main>
+<h3>Personagem na Tela</h3>
+Para colocar o png do personagem na tela em cima do chao marrom a imagem personagem.png deve estar na pasta drawable<br><br>
+
+A gente precisa importar a classe Bitmap e BitmapFactory e Resource<br>
+import android.graphics.Bitmap;<br>
+import android.graphics.BitmapFactory;<br>
+import android.content.res.Resources;<br><br>
+
+A gente cria na classe MainActivity uma variavel Bitmap chamada personagem<br>
+Bitmap personagem;<br><br>
+
+No metodo onCreate a gente usa a funcao decodeResource pra buscar o png na pasta drawable<br>
+personagem=Bitmap.createScaledBitmap(
+BitmapFactory.decodeResource(
+getResources(),R.drawable.personagem),
+(int)Math.ceil(medida*4),(int)Math.ceil(medida*4),true);<br>
+Repare que a gente usa a variavel medida para que o tamanho do personagem na tela seja o mesmo independente de modelo do celular ou nivel do zoom usado<br><br>
+
+No método onDraw a gente usa o método drawBitmap<br>
+c.drawBitmap(personagem,(int)(medida*4),(int)(medida*13),p);<br>
+Repare que o posicionamento da imagem está relacionado à variável medida<br><br>
+<div class=portaimg><img src=imagens/Screenshot_20220501-151141.png></div>
+<div class=portaimg><img src=imagens/Screenshot_20220501-151227.png></div>
+<div id=menu></div>
+</div>
+<script src=menu.js></script>
+</body>
+</html>

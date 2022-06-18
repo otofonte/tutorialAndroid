@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width'>
+<title>Programando um jogo no celular</title>
+<link href=style.css rel=stylesheet>
+<body>
+<div id=main>
+<h3>A pasta /res</h3>
+A pasta 'res' é o local indicado para armazenar as imagens do app.<br><br>
+
+Essa pasta também pode armazenar os arquivos de temas, as traduções, as músicas e efeitos sonoros...<br>
+Todos os 'recursos' do app.<br>
+res é abreviação de resources (que significa recursos).<br><br>
+
+Eu gosto de depenar essa pasta para o app ficar mais leve.<br><br>
+
+A gente pode excluir a pasta 'menu' que não tem nada dentro dela.<br><br>
+
+A pasta 'layouts' a gente vai excluir depois de começar a escrever código java.<br><br>
+
+Eu quero explicar sobre as pastas 'drawable...'<br><br>
+
+O sistema android permite alterar o 'zoom' para que idosos acessem o facebook e leiam tudo com letras grandes.<br>
+São basicamente 4 opções de zoom:<br>
+normal (mdpi)<br>
+high definition (hdpi)<br>
+low definition (ldpi)<br>
+extra high definition (xdpi)<br><br>
+
+e tem também outras definições para tablet.<br><br>
+
+Tudo isso não serve para o nosso joguinho.<br>
+Por que ele deve apresentar a mesma jogabilidade para todas as configurações de zoom.<br>
+(por que senão fica mais fácil ou mais difícil se a área do jogo exibida for maior ou menor. O jogo fica mais fácil se o user enxergar o obstaculo vindo de longe. Fica difícil se o user ver o obstaculo logo de repente, sem ver ele vindo de longe.)<br><br>
+
+Mas o padrão sugerido é armazenar as imagens de tamanhos/definições difetentes nas pastas 'drawable' correspondentes.<br><br>
+
+Eu costumo deixar somente uma pasta drawable<br>
+Deleto todas as variações de definição.<br>
+Todas as imagens ficam dentro da pasta 'drawable'.<br>
+Inclusive o arquivo 'ic_launcher.png' que é o ícone do app.<br><br>
+
+Eu coloco esse ícone dentro da pasta 'drawable' e deleto as outras variações de drawable.<br><br>
+
+Se você quiser mudar o ícone do app substitua esse arquivo.<br>
+Se for renomear esse arquivo você precisa renomear também dentro do arquivo manifest.
+<div id=menu></div>
+</div>
+<script src=menu.js></script>
+</body>
+</html>

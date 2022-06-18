@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width'>
+<title>Programando um jogo no celular</title>
+<link href=style.css rel=stylesheet>
+<body>
+<div id=main>
+<h3>onTouchEvent</h3>
+Vamos tratar o toque do user.<br><br>
+
+A princípio vamos simplesmente mudar a posicao do personagem cada vez que o user tocar a tela.<br><br>
+
+A gente cria uma variavel pulo na classe MainActivity<br>
+int pulo;<br><br>
+
+Uma boa opção é sobrecarregar o método onTouchEvent<br>
+@Override public boolean onTouchEvent(MotionEvent me){<br>
+			return true;<br>
+}<br><br>
+
+A gente precisa importar o MotionEvent<br>
+import android.view.MotionEvent;<br><br>
+
+Quando o user tocar na tela o valor da variavel pula vai alternar entre 0 e 140<br>
+			if(me.getAction()==MotionEvent.ACTION_DOWN){<br>
+				if(pulo==0)pulo=140;<br>
+				else pulo=0;<br>
+				invalidate();<br>
+			}<br><br>
+
+invalidate é um comando que chama a função onDraw.<br><br>
+
+MotionEvent.ACTION_UP acontece quando o user tira o dedo da tela.<br>
+MotionEvent.ACTION_DOWN acontece quando o user encosta o dedo na tela.<br>
+Existem outras variações.<br>
+E existe a possibilidade de tratar o toque independente do tipo.<br><br>
+
+Na onDraw a gente usa a variavel pulo para posicionar o personagem na tela<br>
+c.drawBitmap(personagem,(int)(medida*4),(int)(medida*13)-pulo,p);<br><br>
+<div class=portaimg><img src=imagens/Screenshot_20220501-162641.png></div>
+<div id=menu></div>
+</div>
+<script src=menu.js></script>
+</body>
+</html>
